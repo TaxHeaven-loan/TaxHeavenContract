@@ -1,0 +1,20 @@
+Test Document
+  Contract: Lending
+    deposit
+      ✓ works well when the lending token has not been registered
+      ✓ gives tax token to a lender if the lending token has been registered
+      ✓ gives tax token to a lender if ETH has been registered as lending token
+    withdraw
+      ✓ works well (simple scenario case 0)
+    borrow
+      ✓ works well (simple scenario case 0)
+      ✓ reverts if a borrower borrow more than remaining credit of the lender
+    repay
+      ✓ works well (simple scenario case 0)
+      ✓ cannot be executed without borrowing sufficiently
+    getRemainingCredit
+      ✓ is increased when a lender deposited
+      ✓ is increased when a lender deposited twice
+    getTotalLending
+      ✓ is increased when a lender deposited
+      ✓ is also increased when the second lender deposited

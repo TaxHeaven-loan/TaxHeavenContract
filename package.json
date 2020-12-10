@@ -1,0 +1,69 @@
+{
+  "name": "staking",
+  "version": "1.1.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@openzeppelin/contracts": "3.2.2-solc-0.7",
+    "@typechain/web3-v1": "^1.0.0",
+    "@types/bignumber.js": "^5.0.0",
+    "@types/chai": "^4.2.11",
+    "@types/cli-table": "^0.3.0",
+    "@types/mocha": "^7.0.2",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^13.9.8",
+    "eth-gas-reporter": "^0.2.17",
+    "ganache-cli": "6.12.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "openzeppelin-solidity": "3.2.0",
+    "prettier": "^2.0.5",
+    "prettier-plugin-solidity": "^1.0.0-alpha.52",
+    "solc": "0.7.1",
+    "solidity-coverage": "^0.7.9",
+    "truffle": "^5.1.21",
+    "truffle-typings": "^1.0.8",
+    "ts-node": "^8.8.1",
+    "typechain": "^2.0.0",
+    "typechain-target-truffle": "^1.0.2",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@openzeppelin/test-helpers": "0.5.5",
+    "@truffle/hdwallet-provider": "^1.0.35",
+    "@types/lodash": "^4.14.165",
+    "cli-table": "^0.3.1",
+    "commander": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "ethereumjs-tx": "^2.1.2",
+    "lodash": "^4.17.20",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "web3": "^1.2.9",
+    "yaml": "^1.10.0"
+  },
+  "scripts": {
+    "compile": "npx truffle compile",
+    "generate": "yarn compile && npx typechain --target=truffle 'build/contracts/**/*.json' && npx ts-node scripts/typechain",
+    "prepare": "yarn generate",
+    "test": "VERSION=production npx truffle test",
+    "coverage": "npx truffle run coverage --network coverage",
+    "ganache": "npx ganache-cli --port 7545 > /dev/null &",
+    "ganache:dev": "npx ganache-cli --port 7545 -e 1000000 --allowUnlimitedContractSize",
+    "fix": "npx prettier --write contracts/**/*.sol test/**/*.ts",
+    "lint": "npx prettier --check contracts/**/*.sol test/**/*.ts",
+    "clean:log": "rm log/*.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "test/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+      "npx prettier --write"
+    ],
+    "contracts/**/*.sol": [
+      "npx prettier --write"
+    ]
+  }
+}

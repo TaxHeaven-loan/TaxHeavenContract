@@ -1,0 +1,33 @@
+Test Document
+  Contract: Governance
+    propose
+      ✓ works well
+    vote
+      ✓ works well when a voter approves the proposal
+      ✓ works well when a voter denies the proposal
+      ✓ cannot vote a proposal whose pre-vote period finished without locked in
+    lockinProposal
+      ✓ works well in the case of sufficient amount of votes (the number of votes is 1)
+      ✓ works well in the case of sufficient amount of votes (case 2)
+      ✓ works well in the case of sufficient amount of votes (case 3)
+      ✓ reverts in the case of no votes
+      ✓ reverts in the case of insufficient amount of votes
+      ✓ reverts in the case of insufficient amount of votes (case 2)
+    applyProposal
+      ✓ lock in a proposal without a vote opposed to it, and then finish the main voting period
+      ✓ works well (simple scenario case 1)
+      ✓ works well (simple scenario case 2)
+      ✓ works well (simple scenario case 3)
+      ✓ works well (simple scenario case 4)
+      ✓ works well (simple scenario case 5)
+      ✓ works well (simple scenario case 6)
+      ✓ cannot apply a proposal in its main voting period
+      ✓ cannot apply a expired proposal
+    withdraw
+      ✓ a participant receives deposit
+      ✓ a non-participant receives nothing
+      ✓ cannot withdraw twice
+
+  Contract: Governance
+    getProposals
+      ✓ returns correct values

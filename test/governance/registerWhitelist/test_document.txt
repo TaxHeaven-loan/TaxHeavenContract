@@ -1,0 +1,13 @@
+Test Document
+  Contract: Governance
+    proposeUpdateWhitelist
+      ✓ works well
+      ✓ reverts when a proposer try to register a zero address as oracle
+    applyGovernanceForUpdateWhitelist
+      ✓ lock in a proposal without a vote opposed to it, and then finish the main voting period
+      ✓ works well (simple scenario case 1)
+      ✓ works well (simple scenario case 2)
+      ✓ cannot apply a proposal in its main voting period
+      ✓ cannot apply a expired proposal
+    getInfoUpdateWhitelist
+      ✓ returns correct values

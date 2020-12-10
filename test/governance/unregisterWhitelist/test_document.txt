@@ -1,0 +1,12 @@
+Test Document
+  Contract: Governance
+    proposeDelistWhitelist
+      ✓ works well
+    applyGovernanceForDelistWhitelist
+      ✓ lock in a proposal without a vote opposed to it, and then finish the main voting period
+      ✓ works well (simple scenario case 1)
+      ✓ works well (simple scenario case 2)
+      ✓ cannot apply a proposal in its main voting period
+      ✓ cannot apply a expired proposal
+    getInfoDelistWhitelist
+      ✓ returns correct values
