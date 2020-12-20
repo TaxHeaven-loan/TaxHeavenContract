@@ -32,23 +32,7 @@ The issuance of TAX tokens ends when the cumulative deposit value exceeds $51.2B
 
 ## Audits
 
-The Contract is NOT AUDITED.  DYOR!!!!!
-
-Contributors have given their best efforts to ensure the security of these contracts, but make no guarantees. It has been spot checked by just a few pairs of eyes. It is a probability - not just a possibility - that there are bugs.
-
-The tax token is issued when a whitelisted token is lent in the lending contract, but it might be possible that the tax token is issued for a non-whitelisted token and end up with unexpected inflation. Such a case would occur when a malicious proposal is accepted through the governance process.
-
-The lending contract, which you directly expose your asset to, may be less risky to use as users can instantly borrow assets when you deposit assets. However, it won't guarantee the safety of your assets during the few blocks of time. Non-standard ERC20 such as AMPL may work inappropriately.
-
-The tax token staking contract, which you deposit your tax token to, is subject to the risk you lose your tax token, or you lose the chance to receive dividends.
-
-The governance contract, which you can use by staking the tax token in the staking contract, may cause your tax token to be unredeemable from the staking contract. Even if there is no bug in the code, the economical vulnerability may exist and a malicious token may be whitelisted or some core parameters might be unintendedly updated.
-
-The uniswap-share token staking contract is same implementation as the tax token staking contract. You have the risk that you may not be able to redeem the uniswap-share token and may lose your tax token and ETH.
-
-
-If you feel uncomfortable with these disclosures, don't stake or hold TAX, or simply don't use Tax Heaven Protocol at all.
-
+[Audit Report](./TechRate_TaxHeaven.pdf)
 
 ## Contract addresses
 
